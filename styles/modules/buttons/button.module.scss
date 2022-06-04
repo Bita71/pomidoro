@@ -1,0 +1,9 @@
+@import '../../utils/utils.scss';
+
+.button {
+  border: 2px solid;
+  padding: 13px 48px;
+  font-weight: 500;
+  color: $white;
+  cursor: pointer;
+}

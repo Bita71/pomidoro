@@ -1,0 +1,50 @@
+@import "../../../utils/utils.scss";
+
+.task {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  font-weight: 300;
+}
+
+.form {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 4px 5px;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1;
+  background-color: $greyF4 ;
+
+  &::placeholder {
+    color: $grey99;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    cursor: auto;
+  }
+}
+
+.text {
+  padding-left: 5px;
+}
+
+.pomodoro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $greyC4;
+  border-radius: 50%;
+  min-width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.menu {
+  margin-right: 0;
+  margin-left: auto;
+}

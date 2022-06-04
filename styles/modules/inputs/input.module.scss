@@ -1,0 +1,18 @@
+@import '../../utils/utils.scss';
+
+.label {
+  position: relative;
+  display: block;
+}
+
+.error {
+    position: absolute;
+    top: -15px;
+    font-size: 12px;
+    line-height: 1;
+    color: $pomodoro;
+}
+
+.input {
+  font-family: $fontFamily;
+}

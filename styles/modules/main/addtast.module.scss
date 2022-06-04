@@ -1,0 +1,31 @@
+@import "../../utils/utils.scss";
+
+.label {
+  margin-bottom: 25px;
+}
+
+.input {
+  width: 100%;
+  padding: 15px 19px;
+  font-weight: 300;
+  background-color: $greyF4;
+
+  &::placeholder {
+    color: $grey99;
+  }
+}
+
+.error {
+  padding-left: 19px;
+}
+
+.button {
+  border-color: $green;
+  background-color: $green;
+  @include transition(background-color, border-color);
+
+  &:hover {
+    border-color: $greenDark;
+    background-color: $greenDark;
+  }
+}

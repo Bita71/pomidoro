@@ -1,0 +1,73 @@
+@import "../../../utils/utils.scss";
+
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../../../public/asset/icons/points.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dropdown {
+  position: absolute;
+  border: 1px solid $greyC4;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $white;
+  z-index: 2;
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    border: 1px solid $greyC4;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    width: 8px;
+    height: 8px;
+    transform: rotate(-45deg) translate(-50%, -50%);
+    background-color: $white;
+  }
+}
+
+.list {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: max-content;
+}
+
+.buttonItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: $grey99;
+  padding: 9px 15px;
+  @include transition(background-color);
+
+  &:hover {
+    background-color: $greyF4;
+  }
+
+  &:disabled {
+    cursor: auto;
+    &:hover {
+      background-color: transparent;
+    }
+    & svg path {
+      fill: $greyC4;
+    }
+  }
+}
+
+.text {
+  margin-left: 8px;
+  font-weight: 300;
+}

@@ -1,0 +1,14 @@
+@import '../../utils/utils.scss';
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 300;
+  color: $pomodoro;
+}
+
+.logoText {
+  margin-left: 12px;
+}

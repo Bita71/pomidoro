@@ -1,0 +1,118 @@
+@import "../../../utils/utils.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 19px 40px;
+  color: $white;
+  background-color: $greyC4;
+
+  .work & {
+    background-color: $pomodoro;
+  }
+
+  .break & {
+    background-color: $green;
+  }
+}
+
+.headernName {
+  font-weight: 700;
+}
+
+.pomodoro {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.timerBlock {
+  text-align: center;
+  padding: 70px 40px 110px;
+  background-color: $greyF4;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+  font-size: 150px;
+  line-height: 179px;
+  transform: translateX(35px);
+
+  .work.process & {
+    color: $pomodoro;
+  }
+
+  .break.process & {
+    color: $green;
+  }
+}
+
+.buttonAdd {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 25px;
+  background-image: url("../../../../public/asset/icons/plus.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: $greyC4;
+  @include transition(background-color);
+
+  &:hover {
+    background-color: $greenDark;
+  }
+
+  &:disabled {
+    background-color: $greyC4;
+    cursor: auto;
+  }
+}
+
+.nameBlock {
+  margin-bottom: 30px;
+}
+
+.taskNumber {
+  margin-right: 4px;
+  color: $grey99;
+}
+
+.name {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 17px;
+}
+
+.buttonGreen {
+  border-color: $green;
+  background-color: $green;
+  margin-right: 25px;
+  @include transition(border, background-color);
+
+  &:hover {
+    border-color: $greenDark;
+    background-color: $greenDark;
+  }
+}
+
+.buttonRed {
+  border-color: $pomodoro;
+  background-color: transparent;
+  color: $pomodoro;
+  @include transition(background-color, color, border);
+
+  &:hover {
+    background-color: $pomodoro;
+    color: $white;
+  }
+
+  &:disabled {
+    cursor: auto;
+    border-color: $greyC4;
+    background-color: transparent;
+    color: $greyC4;
+  }
+}

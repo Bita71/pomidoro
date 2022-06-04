@@ -1,0 +1,44 @@
+@import '../../utils/utils.scss';
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.left {
+  grid-column: span 5;
+}
+
+.right {
+  grid-column: span 7;
+}
+
+.title {
+  margin-bottom: 3px;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;  
+  padding-left: 15px;
+}
+
+.item {
+  color: $pomodoroDark;
+}
+
+.itemText {
+  line-height: 33px;
+  color: $black;
+}
+
+.tasks {
+  max-width: 370px;
+}
+
+.addTask {
+  margin-bottom: 25px;
+}
