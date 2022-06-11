@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "npm run build && next start",
     "lint": "next lint"
   },
   "keywords": [],
@@ -13,8 +13,6 @@
   "license": "MIT",
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",
-    "@next-auth/prisma-adapter": "^1.0.3",
-    "@prisma/client": "^3.13.0",
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
@@ -22,14 +20,16 @@
     "next": "^12.1.6",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-redux": "^8.0.2"
+    "react-redux": "^8.0.2",
+    "react-select": "^5.3.2",
+    "recharts": "^2.1.10"
   },
   "devDependencies": {
     "@types/node": "17.0.14",
     "@types/react": "17.0.38",
+    "@types/react-dom": "^18.0.5",
     "eslint": "^8.15.0",
     "eslint-config-next": "^12.1.6",
-    "prisma": "^3.13.0",
     "sass": "^1.51.0",
     "typescript": "4.5.5"
   }

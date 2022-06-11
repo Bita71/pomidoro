@@ -5,14 +5,14 @@ import styles from "../styles/modules/layout.module.scss";
 interface LayoutProps {
   children: React.ReactNode;
   className?: string;
-  title :string;
+  title?:string;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, className, title }) => {
   return (
     <div>
       <Header />
-      <h1 className="visually-hidden">{title}</h1>
+      {title && <h1 className="visually-hidden">{title}</h1>}
       <Container className={classNames(styles.container, className)}>
         {children}
       </Container>

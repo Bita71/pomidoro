@@ -8,7 +8,7 @@ interface ITask {
   pomodoro: number;
 }
 
-interface IDay {
+export interface IDay {
   pause: number;
   focus: number;
   break: number;
@@ -100,15 +100,13 @@ export const tasksSlice = createSlice({
           pomodoro: 0,
         };
       }
-
-      state.hystory[date] = {
-        pause: state.hystory[date].pause + (payload.pause || 0),
-        focus: state.hystory[date].focus + (payload.focus || 0),
-        break: state.hystory[date].break + (payload.break || 0),
-        stops: state.hystory[date].stops + (payload.stops || 0),
-        tasks: state.hystory[date].tasks + (payload.tasks || 0),
-        pomodoro: state.hystory[date].pomodoro + (payload.pomodoro || 0),
-      };
+      const hystory = state.hystory[date];
+      hystory.pause += payload.pause || 0;
+      hystory.focus += payload.focus || 0;
+      hystory.break += payload.break || 0;
+      hystory.stops += payload.stops || 0;
+      hystory.tasks += payload.tasks || 0;
+      hystory.pomodoro += payload.pomodoro || 0;
     },
   },
 });

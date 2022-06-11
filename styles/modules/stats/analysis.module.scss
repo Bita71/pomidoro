@@ -1,0 +1,23 @@
+@import "../../utils/utils.scss";
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 260px 180px 180px;
+  gap: 30px;
+}
+
+.day,
+.pomodoro {
+  grid-column: 1 / 4;
+}
+
+.plot {
+  grid-column: 4 / 13;
+  grid-row: 1 / 3;
+}
+
+.bottomBlock {
+  grid-column: span 4;
+  grid-row: 3 / 4;
+}

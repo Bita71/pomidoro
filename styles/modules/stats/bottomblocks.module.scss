@@ -1,0 +1,51 @@
+@import "../../utils/utils.scss";
+
+.bottomBlock {
+  display: flex;
+  align-items: center;
+
+  padding: 25px;
+
+  &Left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &Title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  &Count {
+    margin-top: auto;
+    margin-bottom: 0;
+    font-size: 64px;
+    line-height: 76px;
+  }
+
+  &Icon {
+    margin-left: auto;
+    margin-right: 0;
+
+    .disabled & path {
+      stroke: $greyC4;
+    }
+  }
+
+  &.focus {
+    background-color: $orange;
+  }
+
+  &.pause {
+    background-color: $violet;
+  }
+
+  &.stops {
+    background-color: $blue;
+  }
+  &.disabled {
+    background-color: $greyF4;
+  }
+}

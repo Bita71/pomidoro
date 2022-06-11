@@ -13,73 +13,88 @@ function format(time: number) {
   let result = "";
   if (years) {
     result += years.toString() + " ";
-    switch (years % 10) {
-      case 1:
-        result += "год";
-        break;
-      case 2:
-      case 3:
-      case 4:
-        result += "года";
-        break;
-      default:
-        result += "лет";
-        break;
+    if (years >= 11 && years <= 14) {
+      result += "лет";
+    } else {
+      switch (years % 10) {
+        case 1:
+          result += "год";
+          break;
+        case 2:
+        case 3:
+        case 4:
+          result += "года";
+          break;
+        default:
+          result += "лет";
+          break;
+      }
     }
     result += " ";
   }
 
   if (days) {
     result += days.toString() + " ";
-    switch (days % 10) {
-      case 1:
-        result += "день";
-        break;
-      case 2:
-      case 3:
-      case 4:
-        result += "дня";
-        break;
-      default:
-        result += "дней";
-        break;
+    if (days >= 11 && days <= 14) {
+      result += "дней";
+    } else {
+      switch (days % 10) {
+        case 1:
+          result += "день";
+          break;
+        case 2:
+        case 3:
+        case 4:
+          result += "дня";
+          break;
+        default:
+          result += "дней";
+          break;
+      }
     }
     result += " ";
   }
 
   if (hours) {
     result += hours.toString() + " ";
-    console.log(hours % 10);
-    switch (hours % 10) {
-      case 1:
-        result += "час";
-        break;
-      case 2:
-      case 3:
-      case 4:
-        result += "часа";
-        break;
-      default:
-        result += "часов";
-        break;
+    if (hours >= 11 && hours <= 14) {
+      result += "часов";
+    } else {
+      switch (hours % 10) {
+        case 1:
+          result += "час";
+          break;
+        case 2:
+        case 3:
+        case 4:
+          result += "часа";
+          break;
+        default:
+          result += "часов";
+          break;
+      }
     }
     result += " ";
   }
 
   if (minutes) {
     result += minutes.toString() + " ";
-    switch (minutes % 10) {
-      case 1:
-        result += "минута";
-        break;
-      case 2:
-      case 3:
-      case 4:
-        result += "минуты";
-        break;
-      default:
-        result += "минут";
-        break;
+    if (minutes >= 11 && minutes <= 14) {
+      result += "минут";
+    } else {
+      switch (minutes % 10) {
+        case 1:
+          result += "минута";
+          break;
+        case 2:
+        case 3:
+        case 4:
+          result += "минуты";
+          break;
+        default:
+          result += "минут";
+          break;
+      }
     }
   }
 

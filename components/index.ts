@@ -7,3 +7,4 @@ export { default as Tasks } from "./Main/Tasks/Tasks.component";
 export { default as Input } from "./Inputs/Input.component";
 export { default as Timer } from "./Main/Timer/Timer.component";
 export { default as TimerContainer } from "./Main/Timer/TimerContainer.component";
+export { default as Modal} from './Modals/Modal.modal'

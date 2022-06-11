@@ -8,8 +8,9 @@ interface TimerContainer {
   className?: string;
 }
 
-const initialTime = 60 * 25;
-const breakTime = 60 * 25;
+const initialTime = 60 * 0.2;
+const breakTime = 60 * 0.2;
+const bigBreakTime = 60 * 15;
 
 export type TStatuses =
   | "default"
@@ -59,6 +60,7 @@ const TimerContainer: React.FC<TimerContainer> = ({ className }) => {
       setStatus("default");
       return;
     }
+    setTime(initialTime);
     stopTimer();
     setPomodor(1);
     setStatus("default");
@@ -74,7 +76,11 @@ const TimerContainer: React.FC<TimerContainer> = ({ className }) => {
               focus: defaultTime,
             })
           );
-          setTime(breakTime);
+          if (taskNumber % 4 == 0) {
+            setTime(bigBreakTime);
+          } else {
+            setTime(breakTime);
+          }
           setStatus("break");
           break;
         case "break":
@@ -182,12 +188,16 @@ const TimerContainer: React.FC<TimerContainer> = ({ className }) => {
         );
         setPomodor(task.pomodoro);
         setStatus("break");
-        setTime(breakTime);
+        if (taskNumber % 4 == 0) {
+          setTime(bigBreakTime);
+        } else {
+          setTime(breakTime);
+        }
         break;
       case "break":
         dispatch(
           editDay({
-            break: breakTime - time,
+            break: taskNumber % 4 == 0 ? bigBreakTime - time : breakTime - time,
             pomodoro: Number(isAward),
             tasks: Number(task.pomodoro === pomodor),
           })
@@ -202,7 +212,7 @@ const TimerContainer: React.FC<TimerContainer> = ({ className }) => {
       case "break_pause":
         dispatch(
           editDay({
-            break: breakTime - time,
+            break: taskNumber % 4 == 0 ? bigBreakTime - time : breakTime - time,
             pomodoro: Number(isAward),
             tasks: Number(task.pomodoro === pomodor),
             pause: Math.round((Date.now() - pauseStart) / 1000),

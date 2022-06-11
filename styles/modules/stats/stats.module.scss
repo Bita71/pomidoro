@@ -1,0 +1,19 @@
+$gap: 30px;
+
+.top {
+  display: flex;
+  align-items: center;
+  margin-bottom: $gap;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.select {
+  max-width: 370px;
+  width: 100%;
+  margin-right: 0;
+  margin-left: auto;
+}

@@ -71,3 +71,31 @@
   margin-left: 8px;
   font-weight: 300;
 }
+
+.delete {
+  &Modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: initial 80px;
+  }
+
+  &Title {
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 17px;
+  }
+
+  &Button{
+    margin-bottom: 10px;
+    background-color: $pomodoro;
+  }
+
+  &Cancel {
+    font-family: $fontFamily;
+    font-weight: 300;
+    color: $black;
+    text-decoration: underline;
+  }
+}

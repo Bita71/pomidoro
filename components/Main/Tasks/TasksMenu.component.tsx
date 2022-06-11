@@ -13,6 +13,7 @@ import {
   increasePomodoro,
   ITask,
 } from "../../../store/tasks";
+import { Button, Modal } from "../..";
 
 interface TasksMenuProps {
   task: Pick<ITask, "id" | "pomodoro">;
@@ -26,15 +27,24 @@ const TasksMenu: React.FC<TasksMenuProps> = ({
   className,
 }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const dispatch = useAppDispatch();
   const handleIncrease = () => dispatch(increasePomodoro({ id }));
   const handleDecrease = () => dispatch(decreasePomodoro({ id }));
   const handleDelete = () => {
-    dispatch(deleteTask({ id }));
+    setIsDeleteModalOpen(true);
   };
   const handleClick = () => {
     setIsDropdownOpen((prevState) => !prevState);
   };
+  const handleDeleteModalClose = () => {
+    setIsDeleteModalOpen(false);
+  };
+  const handleTaskDelete = () => {
+    setIsDeleteModalOpen(false);
+    dispatch(deleteTask({ id }));
+  };
+
   useEffect(() => {
     if (!isDropdownOpen) {
       return;
@@ -45,15 +55,15 @@ const TasksMenu: React.FC<TasksMenuProps> = ({
     }
 
     window.addEventListener("click", close);
-    
+
     return () => {
       window.removeEventListener("click", close);
     };
   }, [isDropdownOpen]);
-  
+
   const menuList = [
     {
-      Icon: () => <Image src={Plus} width={18} height={18} />,
+      Icon: () => <Image src={Plus} width={18} height={18} alt="Увеличить" />,
       text: "Увеличить",
       onClick: handleIncrease,
     },
@@ -81,12 +91,12 @@ const TasksMenu: React.FC<TasksMenuProps> = ({
       disabled: pomodoro === 1,
     },
     {
-      Icon: () => <Image src={Edit} width={18} height={18} />,
+      Icon: () => <Image src={Edit} width={18} height={18} alt="Редактировать" />,
       text: "Редактировать",
       onClick: onClickEdit,
     },
     {
-      Icon: () => <Image src={Delete} width={18} height={18} />,
+      Icon: () => <Image src={Delete} width={18} height={18} alt="Удалить" />,
       text: "Удалить",
       onClick: handleDelete,
     },
@@ -117,6 +127,27 @@ const TasksMenu: React.FC<TasksMenuProps> = ({
             <GenericList list={menuList} />
           </ul>
         </div>
+      )}
+      {isDeleteModalOpen && (
+        <Modal onClose={handleDeleteModalClose} className={styles.deleteModal}>
+          <h3 className={classNames("reset-title", styles.deleteTitle)}>
+            Удалить задачу?
+          </h3>
+          <Button
+            type="button"
+            className={styles.deleteButton}
+            onClick={handleTaskDelete}
+          >
+            Удалить
+          </Button>
+          <button
+            type="button"
+            className={classNames("reset-button", styles.deleteCancel)}
+            onClick={handleDeleteModalClose}
+          >
+            Отмена
+          </button>
+        </Modal>
       )}
     </div>
   );

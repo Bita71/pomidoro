@@ -1,0 +1,7 @@
+.arrow {
+  padding: 17px;
+
+  &.focus {
+    transform: rotate(180deg);
+  }
+}

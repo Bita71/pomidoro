@@ -1,0 +1,28 @@
+@import "../../utils/utils.scss";
+
+.block {
+  display: flex;
+  flex-direction: column;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 32px;
+  padding: 0 181px 0 70px;
+  background-color: $greyEC;
+
+  &Item {
+    padding: 11px 0;
+    text-align: center;
+    font-size: 24px;
+    line-height: 29px;
+    color: $grey99;
+    cursor: pointer;
+    @include transition(color);
+
+    &.active {
+      color: $pomodoro;
+    }
+  }
+}
