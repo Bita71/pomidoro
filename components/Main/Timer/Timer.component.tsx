@@ -64,7 +64,8 @@ const Timer: React.FC<TimerProps> = ({
   const isWorkingPause = status === "work_pause";
   const isBreaking = status === "break";
   const isBreakingPause = status === "break_pause";
-  const isPause = isBreakingPause || isWorkingPause
+  const isPause = isBreakingPause || isWorkingPause;
+  const isBreak = isBreaking || isBreakingPause;
   const isProcess = isWorking || isBreaking;
   return (
     <div
@@ -79,7 +80,9 @@ const Timer: React.FC<TimerProps> = ({
         <h3 className={classNames("reset-title", styles.headerName)}>
           {taskName}
         </h3>
-        <span className={styles.pomodoro}>Помидор {pomodor}</span>
+        <span className={styles.pomodoro}>
+          {isBreak ? "Перерыв" : "Помидор"} {pomodor}
+        </span>
       </div>
       <div className={styles.timerBlock}>
         <div className={styles.timer}>
@@ -102,7 +105,12 @@ const Timer: React.FC<TimerProps> = ({
           >
             {startButtonTexts[status]}
           </Button>
-          <Button type="button" disabled={!isProcess && !isPause} className={styles.buttonRed} onClick={onStop}>
+          <Button
+            type="button"
+            disabled={!isProcess && !isPause}
+            className={styles.buttonRed}
+            onClick={onStop}
+          >
             {stopButtonTexts[status]}
           </Button>
         </div>

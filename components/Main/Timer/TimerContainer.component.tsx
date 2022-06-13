@@ -8,8 +8,8 @@ interface TimerContainer {
   className?: string;
 }
 
-const initialTime = 60 * 0.2;
-const breakTime = 60 * 0.2;
+const initialTime = 60 * 25;
+const breakTime = 60 * 5;
 const bigBreakTime = 60 * 15;
 
 export type TStatuses =
