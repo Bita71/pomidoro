@@ -1,6 +1,6 @@
-#
+# Pomodoro Technique Timer
 
-Pomodoro Technique Timer. — https://www.pomodorotechnique.com/
+About — https://www.pomodorotechnique.com/
 
 Demo - https://pomodoro-mauve.vercel.app/
 
