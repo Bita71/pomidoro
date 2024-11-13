@@ -1,34 +1,33 @@
-# Install
+#
+
+Pomodoro Technique Timer. — https://www.pomodorotechnique.com/
+
+Demo - https://pomodoro-mauve.vercel.app/
+
+## Getting Started
 
 ```
 npm i
 ```
 
-# Run
-
-## Dev
+### Dev
 
 ```
 npm run dev
 ```
 Local server: http://localhost:3000
 
-## Prod
+### Prod
 
 ```
 npm run build
 ```
 
-## Prod Server
+### Prod Server
 
 ```
 npm run start 
 ```
 Local server: http://localhost:3000
 
-## Lint
-
-```
-npm run lint 
-```
 
